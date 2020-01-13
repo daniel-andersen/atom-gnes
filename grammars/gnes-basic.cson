@@ -1,0 +1,32 @@
+# TextMate tutorial: http://manual.macromates.com/en/language_grammars
+
+# Regex to convert keys to unquoted: '(include|match|captures|begin|end|beginCaptures|endCaptures|name|patterns|0|1|2|3|4|5|6|7|8|9|comment|fileTypes|scopeName|repository|contentName|firstLineMatch|foldingStartMarker|foldingStopMarker)':
+
+scopeName: 'source.basic'
+name: 'GNES Basic'
+fileTypes: [
+    'basic'
+]
+firstLineMatch: ''
+foldingStartMarker: ''
+foldingStopMarker: ''
+patterns: [
+    {
+        match: 'Class|Of|Type|Function|End|Property|Return|New|Print|While|Do|Repeat|Until|Break|Continue|If|Then|Else'
+        name: 'keyword.control'
+    }
+    {
+        match: '=|\\<|\\>|\\<=|\\>=|==|\\!=|\\+|\\-|\\/|\\*'
+        name: 'keyword.operator'
+    }
+    {
+        match: '\\".*?\\"'
+        name: 'string'
+    }
+    {
+        match: '([A-Za-z0-9_]+)\\('
+        captures:
+            '1':
+                name: 'entity.name.function'
+  }
+]
